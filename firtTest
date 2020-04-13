@@ -1,0 +1,22 @@
+  <?php
+  class FirstCest
+  {
+      public function frontpageWorks(AcceptanceTester $I)
+      {
+          $I->amOnPage('https://****/site/login');
+                $I->see('Авторизация');
+                $I->see('Имя пользователя');
+                $I->see('Пароль');
+                $I->see('Запомнить');
+                $I->see('ВОЙТИ');
+                $I->click('Войти');
+                $I->see('Необходимо заполнить «Пароль».');
+                $I->see('Необходимо заполнить «Имя пользователя».');
+               // $I->click('LoginForm[rememberMe]');
+                $I->fillField('LoginForm[username]', '****');
+                $I->fillField('LoginForm[password]', '****');
+                //$I->click('LoginForm[rememberMe]');
+                $I->click('Войти');
+                $I->see('Рейсы');
+        }
+   }
